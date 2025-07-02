@@ -13,12 +13,15 @@ df = df.dropna(subset=["建築年"])
 df["建築年"] = df["建築年"].astype(int)
 
 df["築年数"] = datetime.now().year - df["建築年"]
+
 df["市区町村コード"] = df["市区町村名"].astype("category").cat.codes
 
 # 不要な文字列列は削除（例：市区町村名）
 df = df.drop(columns=["市区町村名"])
+# 築年数を使用するため、削除する
+df = df.drop(columns=["建築年"])
 
-# 出力先フォルダは事前に作っておくか、存在チェックを入れてもOK
+# データを出力する
 output_path = "../output/processed_data.csv"
 df.to_csv(output_path, index=False, encoding="utf-8-sig")
 

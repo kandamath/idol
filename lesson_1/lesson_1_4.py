@@ -41,3 +41,6 @@ df_filled["取引価格（総額）"] = df_filled["取引価格（総額）"].fi
 df_filled["面積（㎡）"] = df_filled["面積（㎡）"].fillna(mean_area)
 print("\n▼ 平均値で補完（fillna）")
 print(df_filled.head(6))
+
+# --- 保存 ---
+df_filled.to_csv("../output/lesson_1_4_output.csv", index=False, encoding="utf-8-sig")
