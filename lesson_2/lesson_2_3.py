@@ -22,5 +22,5 @@ df["市区町村コード"] = df["市区町村名"].astype("category").cat.codes
 # ② ワンホットエンコーディングしたい場合（列が増えるので注意）
 # df = pd.get_dummies(df, columns=["市区町村名"])
 
-print("▼ エリア名 → 数値変換後")
+print("▼ 市区町村名 → 数値変換後")
 print(df[["市区町村名", "市区町村コード"]].drop_duplicates().head())
