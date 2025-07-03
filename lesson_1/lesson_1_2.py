@@ -2,9 +2,7 @@
 import pandas as pd
 
 file_path = "lesson_1.csv"
-# df = pd.read_csv(".sample.csv", encoding="cp932")
 df = pd.read_csv(file_path, encoding="utf-8-sig")
-
 
 # 特定の列だけ抽出
 print(df["取引価格（総額）"])
